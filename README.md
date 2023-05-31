@@ -1,15 +1,15 @@
 # BIE-CELib
 A boundary integral equation library implementing several integral operators arising in different problems of the Laplace and Helmholtz equations.
 
-BIE-CELib was developed as part of a master's degree project in numerical analysis at LTH, Sweden. The underlying quadrature is Gauss-Legendre quadrature, and close evaluation (CE in CELib) was solved using product integration and regularization.
+BIE-CELib was developed as part of a master's degree project in numerical analysis at LTH, Sweden. The underlying quadrature is Gauss-Legendre quadrature, and close evaluation (the CE in BIE-CELib) was implemented using product integration and regularization.
 
 The paper "Implementation and study of boundary integral operators related to PDE:s in the plane." summarizes the theory used for the implementation, in sections 2-6. The tests used in the included examples are described in section 7.
 
-The examples which entail solving a boundary value problem are prefaces 'PDE_' in the 'Examples' folder. The tests which involve more direct testing of the integral operators are prefaced 'Op_'. The boundary conditions, wavenumber, screening parameters, etc. can easily be changed, resulting in slightly different boundary value problems. To change the boundary, replace the 'zinit' method in the examples.
+The examples which entail solving a boundary value problem are prefaced 'PDE_' in the 'Examples' folder. The tests which involve more direct testing of the integral operators are prefaced 'Op_'. The boundary conditions, wavenumber, screening parameters, etc. can easily be changed, resulting in slightly different boundary value problems. To change the boundary, replace the 'zinit' method in the examples.
 
 If the user wants to use the included operators to implement a different problem, such as an interior Helmholtz problem, then the structure of the examples can be reused. Simply change the construction of the system matrix to reflect the new problem, as well as the formula for field evaluation in the 'FieldComp' method.  
 
-The implementations of the operators on the boundary can be found in the 'Operators' folder.
+The implementations of the integral operators for target points on the boundary can be found in the 'Operators' folder.
 
 The 'FieldPotentials' folder contains the implementation of the operators for target points not on the boundary, these functions are used in the 'FieldComp' methods in the BVPs examples.
 
